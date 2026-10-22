@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>大话设计模式 · 逐帧动画图解</title>
+  <meta name="description" content="用逐帧动画 + 大白话讲解，把《大话设计模式》中的 24 个设计模式和 6 条设计原则真正记住。">
+  <meta name="theme-color" content="#f6f7fb">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="大话设计模式 · 逐帧动画图解">
+  <meta property="og:description" content="24 个设计模式 + 6 条设计原则，一帧一帧看懂；附 Java / Python / Go 代码骨架和场景测验。">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-in">
+      <a class="brand" href="#/"><span class="brand-logo">模</span>大话设计模式<small>逐帧动画图解</small></a>
+      <nav class="nav">
+        <a href="#/" data-nav="home">全部模式</a>
+        <a href="#/quiz" data-nav="quiz">记忆测验</a>
+        <a href="#/random" data-nav="random">随便看看</a>
+      </nav>
+    </div>
+  </header>
+  <main id="app"></main>
+
+  <script src="js/core.js"></script>
+  <!-- 每个模式 / 原则一个文件，顺序无关（按 order 字段排序） -->
+  <script src="patterns/simple-factory.js"></script>
+  <script src="patterns/strategy.js"></script>
+  <script src="patterns/srp.js"></script>
+  <script src="patterns/ocp.js"></script>
+  <script src="patterns/dip.js"></script>
+  <script src="patterns/lsp.js"></script>
+  <script src="patterns/decorator.js"></script>
+  <script src="patterns/proxy.js"></script>
+  <script src="patterns/factory-method.js"></script>
+  <script src="patterns/prototype.js"></script>
+  <script src="patterns/template-method.js"></script>
+  <script src="patterns/lod.js"></script>
+  <script src="patterns/facade.js"></script>
+  <script src="patterns/builder.js"></script>
+  <script src="patterns/observer.js"></script>
+  <script src="patterns/abstract-factory.js"></script>
+  <script src="patterns/state.js"></script>
+  <script src="patterns/adapter.js"></script>
+  <script src="patterns/memento.js"></script>
+  <script src="patterns/composite.js"></script>
+  <script src="patterns/iterator.js"></script>
+  <script src="patterns/singleton.js"></script>
+  <script src="patterns/bridge.js"></script>
+  <script src="patterns/carp.js"></script>
+  <script src="patterns/command.js"></script>
+  <script src="patterns/chain-of-responsibility.js"></script>
+  <script src="patterns/mediator.js"></script>
+  <script src="patterns/flyweight.js"></script>
+  <script src="patterns/interpreter.js"></script>
+  <script src="patterns/visitor.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# 开发工具产物
+node_modules/
+tools/shots/
+_site/
+
+# 打包文件
+*.zip
+*.tar.gz

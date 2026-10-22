@@ -1,0 +1,67 @@
+# 推送到 main 分支后：先检查（JS 语法 / 内容 / 运行全部 Python 与 Go 代码骨架），通过后发布到 GitHub Pages。
+# 首次使用前：仓库 Settings → Pages → Build and deployment → Source 选择 “GitHub Actions”。
+name: 部署到 GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: 检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - uses: actions/setup-go@v7
+        with:
+          go-version: stable
+          cache: false
+
+      - name: JS 语法检查
+        run: for f in js/*.js patterns/*.js tools/*.js; do node --check "$f"; done
+
+      - name: 内容检查
+        run: node tools/lint.js
+
+      - name: 运行全部 Python / Go 代码骨架
+        run: node tools/check-code.js
+
+  deploy:
+    name: 发布
+    needs: check
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/configure-pages@v6
+
+      - name: 只打包网站需要的文件
+        run: |
+          mkdir _site
+          cp -r index.html css js patterns .nojekyll _site/
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+      - name: 发布
+        id: deployment
+        uses: actions/deploy-pages@v5

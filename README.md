@@ -3,7 +3,7 @@
 把《大话设计模式》中的 **24 个设计模式 + 6 条设计原则**，做成可以一帧一帧看的小动画，每帧配一段大白话讲解。
 写给“书看完了，却什么都没记住”的人。
 
-**在线访问：** https://<你的 GitHub 用户名>.github.io/<仓库名>/ （部署方法见下文）
+**在线访问：** https://yangqing-lin.github.io/dahua-design-patterns/ （部署方法见下文）
 
 ![首页](screenshots/home.png)
 
